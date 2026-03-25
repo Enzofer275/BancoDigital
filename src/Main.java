@@ -4,8 +4,10 @@ public class Main {
 
     public static void main(String[] args) {
         System.out.print("Insira o nome do titular : ");
-        Conta conta = new ContaCorrente(GerenciadorScanner.getScanner().nextLine());
+        Conta conta = new ContaPoupanca(GerenciadorScanner.getScanner().nextLine());
         realizarDeposito(conta);
+        System.out.println(conta.getSaldoFormatado());
+        ((ContaPoupanca) conta).renderJuros(0.05);
         System.out.println(conta.getSaldoFormatado());
         realizarSaque(conta);
         System.out.println(conta.getSaldoFormatado());
