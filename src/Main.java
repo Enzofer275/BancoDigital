@@ -6,11 +6,11 @@ public class Main {
         System.out.print("Insira o nome do titular : ");
         Conta conta = new ContaPoupanca(GerenciadorScanner.getScanner().nextLine());
         realizarDeposito(conta);
-        System.out.println(conta.getSaldoFormatado());
+        System.out.println("Seu atual é de : " + conta.getSaldoFormatado());
         ((ContaPoupanca) conta).renderJuros(0.05);
-        System.out.println(conta.getSaldoFormatado());
+        System.out.println("Seu atual é de : " + conta.getSaldoFormatado());
         realizarSaque(conta);
-        System.out.println(conta.getSaldoFormatado());
+        System.out.println("Seu atual é de : " + conta.getSaldoFormatado());
     }
 
     // ---MÉTODOS-AUXILIARES---
@@ -23,11 +23,9 @@ public class Main {
             } catch (Exception e) {
                 System.out.println("Erro, por favor digite um número válido. ");
                 GerenciadorScanner.getScanner().nextLine();
-
             }
         }
     }
-
     public static void realizarDeposito(Conta conta) {
 
         while (true) {
@@ -40,7 +38,6 @@ public class Main {
             System.out.println("Número invalido, o deposito deve ser maior que 0. ");
         }
     }
-
     public static void realizarSaque(Conta conta) {
         if (conta.getSaldoFormatado().compareTo(BigDecimal.ZERO) <= 0) {
             System.out.println("Saldo insuficiente para um saque, faça um deposito antes");
@@ -53,7 +50,6 @@ public class Main {
                 break;
             }
             System.out.println("Número invalido, o saque deve ser maior que 0 ou igual ao saldo da conta. ");
-
         }
     }
 }

@@ -1,10 +1,10 @@
-public class ContaPoupanca extends Conta{
+public class ContaPoupanca extends Conta {
 
-    public ContaPoupanca(String titular){
+    public ContaPoupanca(String titular) {
         super(titular);
     }
 
-    public void renderJuros(double taxaPercentual){
+    public void renderJuros(double taxaPercentual) {
         double juros = getSaldoFormatado().doubleValue() * taxaPercentual;
         this.depositar(juros);
     }
