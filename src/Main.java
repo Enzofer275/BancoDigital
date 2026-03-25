@@ -1,12 +1,14 @@
+import java.math.BigDecimal;
+
 public class Main {
 
     public static void main(String[] args) {
         System.out.print("Insira o nome do titular : ");
-        Conta conta = new Conta(GerenciadorScanner.getScanner().nextLine());
+        Conta conta = new ContaCorrente(GerenciadorScanner.getScanner().nextLine());
         realizarDeposito(conta);
-        System.out.println(conta.getSaldo());
+        System.out.println(conta.getSaldoFormatado());
         realizarSaque(conta);
-        System.out.println(conta.getSaldo());
+        System.out.println(conta.getSaldoFormatado());
     }
 
     // ---MÉTODOS-AUXILIARES---
@@ -38,7 +40,7 @@ public class Main {
     }
 
     public static void realizarSaque(Conta conta) {
-        if (conta.getSaldo() <= 0) {
+        if (conta.getSaldoFormatado().compareTo(BigDecimal.ZERO) <= 0) {
             System.out.println("Saldo insuficiente para um saque, faça um deposito antes");
             return;
         }

@@ -1,3 +1,6 @@
+import java.math.BigDecimal;
+import java.math.RoundingMode;
+
 public class Conta {
 
     private String titular;
@@ -13,8 +16,9 @@ public class Conta {
         return this.titular;
     }
 
-    public double getSaldo() {
-        return this.saldo;
+    public BigDecimal getSaldoFormatado() {
+        BigDecimal saldoFormatado = new BigDecimal(this.saldo).setScale(2, RoundingMode.HALF_UP);
+        return saldoFormatado;
     }
 
     // ---MÉTODOS DE UTILIDADE---
