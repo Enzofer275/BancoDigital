@@ -1,7 +1,4 @@
-
-
 public class Main {
-
 
     public static void main(String[] args) {
         System.out.print("Insira o nome do titular : ");
@@ -11,7 +8,6 @@ public class Main {
         realizarSaque(conta);
         System.out.println(conta.getSaldo());
     }
-
 
     // ---MÉTODOS-AUXILIARES---
 
@@ -29,7 +25,6 @@ public class Main {
     }
 
     public static void realizarDeposito(Conta conta) {
-
 
         while (true) {
             double valorDigitadoDeposito = receberValor("Insira um valor para realizar o deposito : ");
@@ -51,7 +46,6 @@ public class Main {
             double valorDigitadoSaque = receberValor("Insira um valor para realizar o saque : ");
             if (conta.sacar(valorDigitadoSaque)) {
                 System.out.println("Saque feito com sucesso. ");
-                conta.sacar(valorDigitadoSaque);
                 break;
             }
             System.out.println("Número invalido, o saque deve ser maior que 0 ou igual ao saldo da conta. ");

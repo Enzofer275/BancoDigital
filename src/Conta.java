@@ -1,4 +1,5 @@
 public class Conta {
+
     private String titular;
     private double saldo;
 
@@ -8,7 +9,9 @@ public class Conta {
     }
     // ---MÉTODOS GETTERS
 
-    public String getTitular() { return this.titular; }
+    public String getTitular() {
+        return this.titular;
+    }
 
     public double getSaldo() {
         return this.saldo;
