@@ -43,13 +43,13 @@ public class Main {
     }
 
     public static void realizarSaque(Conta conta) {
-        if (conta.getSaldo() < 0) {
+        if (conta.getSaldo() <= 0) {
             System.out.println("Saldo insuficiente para um saque, faça um deposito antes");
             return;
         }
         while (true) {
             double valorDigitadoSaque = receberValor("Insira um valor para realizar o saque : ");
-            if (valorDigitadoSaque > 0 && valorDigitadoSaque <= conta.getSaldo()) {
+            if (conta.sacar(valorDigitadoSaque)) {
                 System.out.println("Saque feito com sucesso. ");
                 conta.sacar(valorDigitadoSaque);
                 break;
